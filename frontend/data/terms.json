@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "term": "FastAPI",
+    "definition": "Современный веб-фреймворк на Python для создания API с автоматической документацией.",
+    "source": "https://fastapi.tiangolo.com/"
+  },
+  {
+    "id": 2,
+    "term": "SQLite",
+    "definition": "Лёгкая встраиваемая база данных, не требующая отдельного сервера.",
+    "source": "https://www.sqlite.org/"
+  },
+  {
+    "id": 3,
+    "term": "MindMap",
+    "definition": "Визуальная схема для отображения связей между понятиями.",
+    "source": "https://en.wikipedia.org/wiki/Mind_map"
+  }
+]

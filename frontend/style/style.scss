@@ -1,3 +1,4 @@
-body {
-  color: black;
-}
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import './_reset.scss';
+@import './_mixin.scss';
+@import './_common.scss';

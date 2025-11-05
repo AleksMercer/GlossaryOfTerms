@@ -2,30 +2,36 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="./media/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./style/style.css" />
 
     <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
-    <script src="script.js" defer></script>
+    <script src="./scripts/script.js" defer></script>
+    <script src="./scripts/helpers.js" defer></script>
 
-    <title>Глоссарий терминов</title>
+    <title>Glossary of terms</title>
   </head>
   <body>
     <header>
-      <h1>Глоссарий терминов</h1>
+      <button class="label" id="glossary-btn">Глоссарий терминов</button>
+      <button class="label" id="mindmap-btn">Семантический граф</button>
+
+      <div class="label">
+        <a href="https://github.com/AleksMercer">Александр Калагаев</a>
+        |
+        <a href="https://itmo.ru" target="_blank">ITMO</a>
+      </div>
     </header>
 
-    <main>
-      <section id="glossary">
-        <ul id="term-list"></ul>
-      </section>
+    <section id="glossary">
+      <ul id="term-list"></ul>
+    </section>
 
-      <section id="mindmap">
-        <h2>Связи терминов</h2>
-        <div
-          id="network"
-          style="width: 100%; height: 500px; border: 1px solid #ccc"
-        ></div>
-      </section>
-    </main>
+    <section id="mindmap">
+      <div id="network"></div>
+    </section>
   </body>
 </html>

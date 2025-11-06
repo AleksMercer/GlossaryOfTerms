@@ -13,6 +13,17 @@ fetch(DATA_URL)
     return res.json();
   })
   .then((terms) => {
+    terms.forEach((term) => {
+      if (term.related) {
+        term.related = term.related
+          .split(",")
+          .map((id) => parseInt(id.trim()))
+          .filter((id) => !isNaN(id));
+      } else {
+        term.related = [];
+      }
+    });
+
     displayTerms(terms);
     drawMindMap(terms);
   })

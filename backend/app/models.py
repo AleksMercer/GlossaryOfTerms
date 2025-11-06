@@ -4,3 +4,4 @@ class Term(SQLModel, table=True):
     term: str
     definition: str
     source: str | None = None
+    related: str = Field(default="")

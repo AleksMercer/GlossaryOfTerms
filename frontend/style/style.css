@@ -201,6 +201,7 @@ body #glossary.active {
           justify-content: space-between;
   -ms-flex-line-pack: start;
       align-content: start;
+  padding-bottom: 3%;
   row-gap: 3%;
 }
 #term-list li {

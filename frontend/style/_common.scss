@@ -82,6 +82,7 @@ $term-transition: all 0.2s ease-in-out;
 #term-list {
   @include grid_auto-fit(300px, 1%);
   align-content: start;
+  padding-bottom: 3%;
   row-gap: 3%;
 
   li {

@@ -5,7 +5,8 @@ const USE_BACKEND = isLocalhost;
 const API_URL = "http://127.0.0.1:8000/terms";
 const LOCAL_URL = "data/terms.json";
 
-const DATA_URL = USE_BACKEND ? API_URL : LOCAL_URL;
+// const DATA_URL = USE_BACKEND ? API_URL : LOCAL_URL;
+const DATA_URL = LOCAL_URL;
 
 fetch(DATA_URL)
   .then((res) => {
@@ -13,16 +14,18 @@ fetch(DATA_URL)
     return res.json();
   })
   .then((terms) => {
-    terms.forEach((term) => {
-      if (term.related) {
-        term.related = term.related
-          .split(",")
-          .map((id) => parseInt(id.trim()))
-          .filter((id) => !isNaN(id));
-      } else {
-        term.related = [];
-      }
-    });
+    if (DATA_URL !== LOCAL_URL) {
+      terms.forEach((term) => {
+        if (term.related) {
+          term.related = term.related
+            .split(",")
+            .map((id) => parseInt(id.trim()))
+            .filter((id) => !isNaN(id));
+        } else {
+          term.related = [];
+        }
+      });
+    }
 
     displayTerms(terms);
     drawMindMap(terms);

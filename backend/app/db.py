@@ -19,142 +19,135 @@ def init_db():
             {
                 "id": 1,
                 "term": "Web",
-                "definition": "Система взаимосвязанных документов и приложений, доступных через Интернет.",
-                "source": "https://en.wikipedia.org/wiki/World_Wide_Web",
-                "related": "2,3,4"
+                "definition": "Совокупность технологий и стандартов, обеспечивающих работу клиентских и серверных приложений через браузер и HTTP.",
+                "source": "https://developer.mozilla.org/en-US/docs/Web",
+                "related": "2"
             },
             {
                 "id": 2,
-                "term": "Frontend",
-                "definition": "Клиентская часть веб-приложения, с которой взаимодействует пользователь.",
-                "source": "https://en.wikipedia.org/wiki/Front-end_web_development",
-                "related": "1,5,6,7,8"
+                "term": "Frontend Development",
+                "definition": "Область веб-разработки, занимающаяся созданием пользовательского интерфейса и взаимодействия клиента с веб-приложением.",
+                "source": "https://developer.mozilla.org/en-US/docs/Learn/Front-end_web_developer",
+                "related": "3,4,5"
             },
             {
                 "id": 3,
-                "term": "Backend",
-                "definition": "Серверная часть приложения, обрабатывающая данные и управляющая логикой.",
-                "source": "https://en.wikipedia.org/wiki/Front_and_back_ends",
-                "related": "1,9,10,11"
+                "term": "JavaScript",
+                "definition": "Язык программирования, используемый для создания динамических интерфейсов и логики на стороне клиента.",
+                "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+                "related": "6,7,8"
             },
             {
                 "id": 4,
-                "term": "Performance",
-                "definition": "Производительность веб-приложений и методов её оптимизации.",
-                "source": "https://developer.mozilla.org/en-US/docs/Learn/Performance",
-                "related": "1,12,13,14"
+                "term": "TypeScript",
+                "definition": "Надстройка над JavaScript, добавляющая статическую типизацию и инструменты для более безопасной и масштабируемой разработки.",
+                "source": "https://www.typescriptlang.org/",
+                "related": "6,7,8"
             },
             {
                 "id": 5,
-                "term": "HTML",
-                "definition": "Язык гипертекстовой разметки, определяющий структуру веб-страниц.",
-                "source": "https://developer.mozilla.org/en-US/docs/Web/HTML",
-                "related": "2,6"
+                "term": "Web Performance",
+                "definition": "Совокупность характеристик, определяющих скорость загрузки, интерактивность и отзывчивость веб-приложения.",
+                "source": "https://web.dev/learn/performance/",
+                "related": "13,14,15,16,17"
             },
             {
                 "id": 6,
-                "term": "CSS",
-                "definition": "Язык таблиц стилей, описывающий внешний вид документов HTML.",
-                "source": "https://developer.mozilla.org/en-US/docs/Web/CSS",
-                "related": "2,5,7"
+                "term": "React",
+                "definition": "JavaScript-библиотека для создания пользовательских интерфейсов, основанная на концепции компонент и виртуального DOM.",
+                "source": "https://react.dev/",
+                "related": "9,10,11,12"
             },
             {
                 "id": 7,
-                "term": "JavaScript",
-                "definition": "Язык программирования, добавляющий интерактивность веб-страницам.",
-                "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-                "related": "2,6,8,9"
+                "term": "Vue.js",
+                "definition": "Прогрессивный фреймворк для построения интерфейсов, использующий декларативный синтаксис и реактивность данных.",
+                "source": "https://vuejs.org/",
+                "related": "9,10,11,12"
             },
             {
                 "id": 8,
-                "term": "Frameworks",
-                "definition": "Готовые инструменты и библиотеки для ускорения разработки.",
-                "source": "https://en.wikipedia.org/wiki/Software_framework",
-                "related": "2,7,15,16"
+                "term": "Svelte",
+                "definition": "Фреймворк, выполняющий сборку интерфейсов на этапе компиляции, устраняя виртуальный DOM и повышая производительность.",
+                "source": "https://svelte.dev/",
+                "related": "9,11,12"
             },
             {
                 "id": 9,
-                "term": "API",
-                "definition": "Интерфейс взаимодействия между программными компонентами.",
-                "source": "https://en.wikipedia.org/wiki/API",
-                "related": "3,7,10,11,17"
+                "term": "Reactivity",
+                "definition": "Механизм автоматического обновления пользовательского интерфейса при изменении состояния данных.",
+                "source": "https://vuejs.org/guide/extras/reactivity-in-depth.html",
+                "related": ""
             },
             {
                 "id": 10,
-                "term": "Database",
-                "definition": "Организованное хранилище данных, используемое в веб-приложениях.",
-                "source": "https://en.wikipedia.org/wiki/Database",
-                "related": "3,9,11"
+                "term": "Virtual DOM",
+                "definition": "Абстрактное представление DOM в памяти, позволяющее минимизировать реальные операции с деревом элементов и ускорить рендеринг.",
+                "source": "https://react.dev/learn/render-and-commit",
+                "related": ""
             },
             {
                 "id": 11,
-                "term": "FastAPI",
-                "definition": "Современный фреймворк на Python для создания быстрых API.",
-                "source": "https://fastapi.tiangolo.com/",
-                "related": "3,9,10,17"
+                "term": "Component-Based Architecture",
+                "definition": "Подход к разработке интерфейсов, основанный на разделении UI на независимые переиспользуемые компоненты.",
+                "source": "https://react.dev/learn/thinking-in-react",
+                "related": ""
             },
             {
                 "id": 12,
-                "term": "Caching",
-                "definition": "Метод ускорения загрузки путем временного хранения данных.",
-                "source": "https://en.wikipedia.org/wiki/Web_cache",
-                "related": "4,13"
+                "term": "State Management",
+                "definition": "Организация хранения и изменения состояния приложения для обеспечения предсказуемого поведения интерфейса.",
+                "source": "https://redux.js.org/tutorials/essentials/part-1-overview-concepts",
+                "related": ""
             },
             {
                 "id": 13,
-                "term": "Minification",
-                "definition": "Процесс уменьшения размера файлов путем удаления лишнего кода.",
-                "source": "https://en.wikipedia.org/wiki/Minification_(programming)",
-                "related": "4,12,14"
+                "term": "Rendering Optimization",
+                "definition": "Техники уменьшения количества и сложности операций рендеринга, включая мемоизацию, lazy-loading и splitting.",
+                "source": "https://web.dev/articles/rendering-performance",
+                "related": ""
             },
             {
                 "id": 14,
-                "term": "Lazy Loading",
-                "definition": "Техника загрузки ресурсов только по мере необходимости.",
-                "source": "https://en.wikipedia.org/wiki/Lazy_loading",
-                "related": "4,13"
+                "term": "Bundle Optimization",
+                "definition": "Методы уменьшения размера итогового JavaScript-кода: tree shaking, code splitting, минификация.",
+                "source": "https://webpack.js.org/guides/tree-shaking/",
+                "related": ""
             },
             {
                 "id": 15,
-                "term": "React",
-                "definition": "JavaScript-библиотека для создания пользовательских интерфейсов.",
-                "source": "https://react.dev/",
-                "related": "8"
+                "term": "Performance Metrics",
+                "definition": "Ключевые метрики, оценивающие скорость и отзывчивость веб-приложений: LCP, FID, CLS, TTI и др.",
+                "source": "https://web.dev/articles/vitals",
+                "related": ""
             },
             {
                 "id": 16,
-                "term": "Vue",
-                "definition": "Прогрессивный JavaScript-фреймворк для построения интерфейсов.",
-                "source": "https://vuejs.org/",
-                "related": "8"
+                "term": "Performance Testing Tools",
+                "definition": "Инструменты для анализа производительности веб-приложений: Lighthouse, WebPageTest, Chrome DevTools, Sentry Performance.",
+                "source": "https://developer.chrome.com/docs/lighthouse/overview",
+                "related": ""
             },
             {
                 "id": 17,
-                "term": "JSON",
-                "definition": "Формат обмена данными между клиентом и сервером.",
-                "source": "https://www.json.org/",
-                "related": "9,11,18"
+                "term": "Benchmarking",
+                "definition": "Процесс сравнения производительности различных технологий и реализаций по единым метрикам и сценариям.",
+                "source": "https://en.wikipedia.org/wiki/Benchmark_(computing)",
+                "related": ""
             },
             {
                 "id": 18,
-                "term": "REST",
-                "definition": "Архитектурный стиль взаимодействия компонентов через HTTP.",
-                "source": "https://en.wikipedia.org/wiki/Representational_state_transfer",
-                "related": "17,9,11,19,20"
+                "term": "Framework",
+                "definition": "Набор инструментов и архитектурных принципов, определяющих структуру приложения и предоставляющих основу для его разработки.",
+                "source": "https://developer.mozilla.org/en-US/docs/Glossary/Framework",
+                "related": "6,7,8"
             },
             {
                 "id": 19,
-                "term": "Docker",
-                "definition": "Платформа контейнеризации приложений для их изоляции и переноса.",
-                "source": "https://www.docker.com/",
-                "related": "20"
-            },
-            {
-                "id": 20,
-                "term": "Deployment",
-                "definition": "Процесс развёртывания веб-приложений на серверах.",
-                "source": "https://en.wikipedia.org/wiki/Software_deployment",
-                "related": "4"
+                "term": "Library",
+                "definition": "Набор готовых функций или компонентов, которые можно использовать в коде без навязывания общей архитектуры приложения.",
+                "source": "https://developer.mozilla.org/en-US/docs/Glossary/Library",
+                "related": "6"
             }
         ]
 

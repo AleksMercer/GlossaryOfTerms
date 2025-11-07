@@ -5,8 +5,7 @@ const USE_BACKEND = isLocalhost;
 const API_URL = "http://127.0.0.1:8000/terms";
 const LOCAL_URL = "data/terms.json";
 
-// const DATA_URL = USE_BACKEND ? API_URL : LOCAL_URL;
-const DATA_URL = LOCAL_URL;
+const DATA_URL = USE_BACKEND ? API_URL : LOCAL_URL;
 
 fetch(DATA_URL)
   .then((res) => {

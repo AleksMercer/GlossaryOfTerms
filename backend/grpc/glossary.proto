@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package glossary;
+
+message Term {
+  int32 id = 1;
+  string term = 2;
+  string definition = 3;
+  string source = 4;
+  string related = 5;
+}
+
+message Empty {}
+
+message TermRequest {
+  int32 id = 1;
+}
+
+message TermList {
+  repeated Term terms = 1;
+}
+
+service GlossaryService {
+  rpc GetAllTerms (Empty) returns (TermList);
+  rpc GetTermById (TermRequest) returns (Term);
+}

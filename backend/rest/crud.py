@@ -1,6 +1,6 @@
 from sqlmodel import Session, select
-from .models import Term
-from .db import engine
+from ..models import Term
+from ..db import engine
 
 def get_terms():
     with Session(engine) as session:

@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
-from .models import Term
-from .db import init_db
+from ..models import Term
+from ..db import init_db
 from . import crud
 from contextlib import asynccontextmanager
 from fastapi.middleware.cors import CORSMiddleware

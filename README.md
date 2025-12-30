@@ -183,5 +183,3 @@ docker-compose down --rmi all
 - **Backend**: Node.js, Express, SQLite
 - **Контейнеризация**: Docker, Docker Compose
 - **Сервер**: Nginx (для фронтенда в Docker)
-
-## Лицензия

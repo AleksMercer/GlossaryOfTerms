@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="./media/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./style/style.css" />
+
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script src="./scripts/script.js" defer></script>
+    <script src="./scripts/helpers.js" defer></script>
+
+    <script>
+      window.API_CONFIG = {
+        mode: "auto",
+        backendUrl: "http://localhost:8000/terms",
+        localUrl: "data/terms.json",
+      };
+    </script>
+
+    <title>Glossary of terms</title>
+  </head>
+  <body>
+    <header>
+      <button class="label" id="glossary-btn">Глоссарий терминов</button>
+      <button class="label" id="mindmap-btn">Семантический граф</button>
+
+      <div class="label">
+        <a href="https://github.com/AleksMercer">Александр Калагаев</a>
+        |
+        <a href="https://itmo.ru" target="_blank">ITMO</a>
+      </div>
+    </header>
+
+    <section id="glossary">
+      <ul id="term-list"></ul>
+    </section>
+
+    <section id="mindmap">
+      <div id="network"></div>
+    </section>
+  </body>
+</html>

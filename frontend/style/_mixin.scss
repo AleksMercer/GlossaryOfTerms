@@ -1,0 +1,75 @@
+/*==========Mixin==========Start*/
+
+@mixin textellipsis() { 
+//@include textellipsis();
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin grid_template($template) { 
+//@include grid_template($template);
+// Просто грид сетка
+
+  display: grid;
+  grid-template: $template;
+}
+
+@mixin grid_align_center($template) { 
+//@include grid_align_center($template);
+// Грид сетка с вертикальным выравниванием и прижимом к левой стороне
+
+  display: grid;
+  grid-template: $template;
+  align-items: center;
+}
+
+@mixin grid_center($template) {
+//@include grid_center($template);
+//Выравнит вертикально и горизонтально
+
+  display: grid;
+  grid-template: $template;
+  place-items: center;
+}
+
+@mixin grid_items( $j-items, $a-items) { 
+//@include grid_items($j-items, $a-items);
+//Выравнивание содержимого
+
+  justify-items: $j-items; //горизонтальное выравнивание содержимого
+  align-items: $a-items; //вертикальное выравнивание содержимого
+  //значения: start, end, center
+}
+
+@mixin grid_self( $j-self, $a-self) { 
+//@include grid_self( $j-self, $a-self);
+//Выравнивание содержимого конкретного self
+  
+  justify-self: $j-self; //горизонтальное выравнивание содержимого
+  align-self: $a-self; //вертикальное выравнивание содержимого
+  //значения: start, end, center
+}
+
+@mixin grid_content($j-content, $a-content) { 
+//@include grid_content($j-content, $a-content);
+//Выравнивание сетки
+
+  justify-content: $j-content; //горизонтальное выравнивание сетки
+  align-content: $a-content; //вертикальное выравнивание сетки
+  //значения: start, end, center, stretch, space-around, space-evenly, space-between
+}
+
+@mixin grid_auto-fit($auto-fit-width, $auto-fit-gap) { 
+//@include grid_auto-fit($auto-fit-width, $auto-fit-gap);
+//карточки которые будут переноситься вниз при нехватке места
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, $auto-fit-width);
+  gap: $auto-fit-gap;
+  justify-content: space-between;
+
+  //создает карточки заданной ширины и заданным гэпом
+}
+
+/*==========Mixin==========End*/

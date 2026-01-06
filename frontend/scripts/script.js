@@ -1,59 +1,67 @@
-const API_CONFIG = window.API_CONFIG || {
-  mode: "auto",
+const CONFIG = window.CONFIG || {
+  mode: "static",
   backendUrl: "http://localhost:8000/terms",
-  localUrl: "data/terms.json",
+  staticUrl: "data/terms.json",
 };
 
-let USE_BACKEND = false;
-let DATA_URL = API_CONFIG.localUrl;
+let DATA_URL;
 
-if (
-  API_CONFIG.mode === "backend" ||
-  (API_CONFIG.mode === "auto" &&
-    (window.location.hostname === "127.0.0.1" ||
-      window.location.hostname === "localhost"))
-) {
-  USE_BACKEND = true;
-  DATA_URL = API_CONFIG.backendUrl;
+if (CONFIG.mode === "docker") {
+  console.log("Режим: Docker (используется бэкенд)");
+  DATA_URL = CONFIG.backendUrl;
+} else {
+  console.log("Режим: Статический (используется локальный JSON)");
+  DATA_URL = CONFIG.staticUrl;
 }
 
-fetch(DATA_URL)
-  .then((res) => {
-    if (!res.ok) throw new Error(`Ошибка HTTP ${res.status}`);
-    return res.json();
-  })
-  .then((terms) => {
-    if (DATA_URL !== LOCAL_URL) {
-      terms.forEach((term) => {
-        if (term.related) {
-          term.related = term.related
-            .split(",")
-            .map((id) => parseInt(id.trim()))
-            .filter((id) => !isNaN(id));
-        } else {
-          term.related = [];
-        }
-      });
-    }
+function loadData() {
+  return fetch(DATA_URL)
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error(`Ошибка HTTP ${res.status} при загрузке данных`);
+      }
+      return res.json();
+    })
+    .then((terms) => {
+      if (CONFIG.mode === "docker") {
+        terms.forEach((term) => {
+          if (term.related && typeof term.related === "string") {
+            term.related = term.related
+              .split(",")
+              .map((id) => parseInt(id.trim()))
+              .filter((id) => !isNaN(id));
+          } else if (!term.related) {
+            term.related = [];
+          }
+        });
+      }
+      return terms;
+    });
+}
 
+loadData()
+  .then((terms) => {
     displayTerms(terms);
     drawMindMap(terms);
   })
   .catch((err) => {
     console.error("Ошибка при загрузке терминов:", err);
-    if (USE_BACKEND && DATA_URL !== API_CONFIG.localUrl) {
+
+    if (CONFIG.mode === "docker") {
       console.log("Пробуем загрузить локальные данные...");
-      DATA_URL = API_CONFIG.localUrl;
-      USE_BACKEND = false;
-      fetch(DATA_URL)
-        .then((res) => res.json())
+      DATA_URL = CONFIG.staticUrl;
+      CONFIG.mode = "static";
+      loadData()
         .then((terms) => {
           displayTerms(terms);
           drawMindMap(terms);
         })
-        .catch((e) => console.error("Не удалось загрузить данные:", e));
+        .catch((e) => {
+          console.error("Не удалось загрузить данные:", e);
+      });
     }
   });
+
 function displayTerms(terms) {
   const list = document.getElementById("term-list");
   list.innerHTML = "";

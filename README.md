@@ -2,6 +2,13 @@
 
 Веб-приложение для отображения глоссария терминов и их визуализации в виде семантического графа.
 
+## Технологии
+
+- **Frontend**: HTML5, CSS3, JavaScript, vis-network
+- **Backend**: Node.js, Express, SQLite
+- **Контейнеризация**: Docker, Docker Compose
+- **Сервер**: Nginx (для фронтенда в Docker)
+
 ## Структура проекта
 
 - `/backend` - Node.js сервер с API для терминов
@@ -20,7 +27,7 @@
 
 ## Быстрый старт
 
-### Способ 1: Запуск через Docker Compose (рекомендуется)
+### Запуск через Docker Compose
 
 1. Установите [Docker](https://docs.docker.com/get-docker/) и [Docker Compose](https://docs.docker.com/compose/install/)
 
@@ -40,28 +47,6 @@ docker-compose up --build
 4. Откройте в браузере:
    - Фронтенд: http://localhost:8080
    - Бэкенд API: http://localhost:8000/terms
-
-### Способ 2: Локальная разработка без Docker
-
-1. Установите Node.js v18 или выше
-
-2. Запустите бэкенд:
-
-```bash
-cd backend
-npm install
-npm run dev  # Сервер запустится на http://localhost:8000
-```
-
-3. Откройте `frontend/index.html` в браузере через live-server:
-
-```bash
-# Установите live-server глобально
-npm install -g live-server
-
-# Запустите из корня проекта
-live-server frontend
-```
 
 ## Переключение режимов данных
 
@@ -85,16 +70,6 @@ environment:
 docker-compose down
 docker-compose up --build
 ```
-
-### Смена режима при локальной разработке
-
-Создайте файл `.env` в папке `backend`:
-
-```env
-DATA_SOURCE=db  # или json
-```
-
-Перезапустите сервер.
 
 ## Работа с данными
 
@@ -144,27 +119,7 @@ docker exec -it glossary-backend sqlite3 /app/backend/data/terms.db "SELECT COUN
    - Убедитесь, что переключаются вкладки "Глоссарий терминов" и "Семантический граф"
    - Проверьте, что граф отображает связи между терминами
 
-## Устранение неполадок
-
-### Ошибка "no such table: terms"
-
-При использовании режима БД:
-
-1. Убедитесь, что переменная `DATA_SOURCE=db`
-2. Проверьте, что БД инициализирована (в логах должно быть "База данных инициализирована")
-3. Если проблема остается, удалите файл `backend/data/terms.db` и перезапустите сервер
-
-### CORS ошибки
-
-Убедитесь, что:
-
-1. Бэкенд запущен на порту 8000
-2. Фронтенд обращается к правильному URL API
-3. Используется `cors` middleware в бэкенде
-
-## Остановка и очистка
-
-### Docker
+## Остановка и очистка Docker
 
 ```bash
 # Остановка контейнеров
@@ -176,12 +131,3 @@ docker-compose down -v
 # Удаление образов
 docker-compose down --rmi all
 ```
-
-## Технологии
-
-- **Frontend**: HTML5, CSS3, JavaScript, vis-network
-- **Backend**: Node.js, Express, SQLite
-- **Контейнеризация**: Docker, Docker Compose
-- **Сервер**: Nginx (для фронтенда в Docker)
-
-## Лицензия
